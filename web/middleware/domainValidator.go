@@ -14,6 +14,8 @@ func DomainValidatorMiddleware(domain string) gin.HandlerFunc {
 		if colonIndex := strings.LastIndex(host, ":"); colonIndex != -1 {
 			host, _, _ = net.SplitHostPort(c.Request.Host)
 		}
+		logger.Info("!!!!----host is ", host)
+		logger.Info("!!!!----domain is ", domain)
 
 		if host != domain {
 			c.AbortWithStatus(http.StatusForbidden)
