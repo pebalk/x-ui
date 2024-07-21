@@ -43,7 +43,7 @@ func (s *Server) initRouter() (*gin.Engine, error) {
 	} else {
 		gin.DefaultWriter = io.Discard
 		gin.DefaultErrorWriter = io.Discard
-		gin.SetMode(gin.ReleaseMode)
+		gin.SetMode(gin.DebugMode)
 	}
 
 	engine := gin.Default()
