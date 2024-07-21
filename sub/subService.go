@@ -35,6 +35,7 @@ func NewSubService(showInfo bool, remarkModel string) *SubService {
 
 func (s *SubService) GetSubs(subId string, host string) ([]string, string, error) {
 	s.address = host
+	logger.Info("!!!!-GetSubs----host is ", host)
 	var result []string
 	var header string
 	var traffic xray.ClientTraffic
